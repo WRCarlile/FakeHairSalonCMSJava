@@ -22,20 +22,51 @@ public class StylistTest {
 
   @Test
   public void Stylist_instantiatesCorrectly_true() {
-    Stylist myStylist = new Stylist("Household chores");
+    Stylist myStylist = new Stylist("Paul Mitchel");
     assertEquals(true, myStylist instanceof Stylist);
   }
 
   @Test
   public void getName_stylistInstantiatesWithName_String() {
-    Stylist myStylist = new Stylist("Household chores");
-    assertEquals("Household chores", myStylist.getName());
+    Stylist myStylist = new Stylist("Paul Mitchel");
+    assertEquals("Paul Mitchel", myStylist.getName());
   }
 
   @Test
   public void all_emptyAtFirst() {
     assertEquals(Stylist.all().size(), 0);
   }
+  @Test
+    public void equals_returnsTrueIfNamesAretheSame() {
+      Client firstClient = new Client("Bob Smith", 1);
+      Client secondClient = new Client("Bob Smith", 1);
+      assertTrue(firstClient.equals(secondClient));
+    }
 
-  
+    @Test
+    public void save_assignsIdToObject() {
+      Client myClient = new Client("Bob Smith", 1);
+      myClient.save();
+      Client savedClient = Client.all().get(0);
+      assertEquals(myClient.getId(), savedClient.getId());
+    }
+
+    @Test
+    public void find_findsClientInDatabase_true() {
+      Client myClient = new Client("Bob Smith", 1);
+      myClient.save();
+      Client savedClient = Client.find(myClient.getId());
+      assertTrue(myClient.equals(savedClient));
+    }
+
+    @Test
+    public void save_savesStylistIdIntoDB_true() {
+      Stylist myStylist = new Stylist("Paul Mitchel");
+      myStylist.save();
+      Client myClient = new Client("Bob Smith", myStylist.getId());
+      myClient.save();
+      Client savedClient = Client.find(myClient.getId());
+      assertEquals(savedClient.getStylistId(), myStylist.getId());
+    }
+
 }
