@@ -42,31 +42,47 @@ public class ClientTest {
       assertTrue(firstClient.equals(secondClient));
     }
 
-    @Test
-    public void save_assignsIdToObject() {
+  @Test
+  public void save_assignsIdToObject() {
+    Client myClient = new Client("Bob Smith", 1);
+    myClient.save();
+    Client savedClient = Client.all().get(0);
+    assertEquals(myClient.getId(), savedClient.getId());
+  }
+
+  @Test
+  public void find_findsClientInDatabase_true() {
+    Client myClient = new Client("Bob Smith", 1);
+    myClient.save();
+    Client savedClient = Client.find(myClient.getId());
+    assertTrue(myClient.equals(savedClient));
+  }
+
+  @Test
+  public void save_savesStylistIdIntoDB_true() {
+    Stylist myStylist = new Stylist("Paul Mitchel");
+    myStylist.save();
+    Client myClient = new Client("Bob Smith", myStylist.getId());
+    myClient.save();
+    Client savedClient = Client.find(myClient.getId());
+    assertEquals(savedClient.getStylistId(), myStylist.getId());
+  }
+
+  @Test
+    public void update_updatesClientName_true() {
       Client myClient = new Client("Bob Smith", 1);
       myClient.save();
-      Client savedClient = Client.all().get(0);
-      assertEquals(myClient.getId(), savedClient.getId());
+      myClient.update("Robert Smith");
+      assertEquals("Robert Smith", Client.find(myClient.getId()).getName());
     }
 
     @Test
-    public void find_findsClientInDatabase_true() {
+    public void delete_deletesClient_true() {
       Client myClient = new Client("Bob Smith", 1);
       myClient.save();
-      Client savedClient = Client.find(myClient.getId());
-      assertTrue(myClient.equals(savedClient));
+      int myClientId = myClient.getId();
+      myClient.delete();
+      assertEquals(null, Client.find(myClientId));
     }
-
-    @Test
-    public void save_savesStylistIdIntoDB_true() {
-      Stylist myStylist = new Stylist("Paul Mitchel");
-      myStylist.save();
-      Client myClient = new Client("Bob Smith", myStylist.getId());
-      myClient.save();
-      Client savedClient = Client.find(myClient.getId());
-      assertEquals(savedClient.getStylistId(), myStylist.getId());
-    }
-
 
 }
