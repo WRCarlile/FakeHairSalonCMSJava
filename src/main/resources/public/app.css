@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+body {
+background-color: #9dccb8;
+}
+
+.long-shadow {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 25px;
+  border: none;
+  font: italic normal normal 56px/1 Arial Black, Gadget, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 3px 3px 0 #0199d9 , 4px 4px 0 #0199d9 , 5px 5px 0 #0199d9 , 6px 6px 0 #0199d9 , 8px 8px 0 #0199d9 , 9px 8px 0 #0199d9 , 10px 10px 0 #0199d9 , 11px 11px 0 #0199d9 , 12px 12px 0 #0199d9 , 13px 13px 0 #0199d9 , 14px 14px 0 #0199d9 , 15px 11px 0 #0199d9 , 16px 16px 0 #0199d9 , 17px 17px 0 #0199d9 , 18px 18px 0 #0199d9 , 19px 19px 0 #0199d9 , 20px 20px 0 #0199d9 ;
+  -webkit-transition: text-shadow 200ms cubic-bezier(0.6, -0.28, 0.735, 0.04) 10ms;
+  -moz-transition: text-shadow 200ms cubic-bezier(0.6, -0.28, 0.735, 0.04) 10ms;
+  -o-transition: text-shadow 200ms cubic-bezier(0.6, -0.28, 0.735, 0.04) 10ms;
+  transition: text-shadow 200ms cubic-bezier(0.6, -0.28, 0.735, 0.04) 10ms;
+  -webkit-transform: rotateX(-5.156620156177409deg) rotateY(25.783100780887047deg)   ;
+  transform: rotateX(-5.156620156177409deg) rotateY(25.783100780887047deg)   ;
+}

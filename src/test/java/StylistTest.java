@@ -37,37 +37,37 @@ public class StylistTest {
     assertEquals(Stylist.all().size(), 0);
   }
   @Test
-    public void equals_returnsTrueIfNamesAretheSame() {
-      Client firstClient = new Client("Bob Smith", 1);
-      Client secondClient = new Client("Bob Smith", 1);
-      assertTrue(firstClient.equals(secondClient));
-    }
+  public void equals_returnsTrueIfNamesAretheSame() {
+    Client firstClient = new Client("Bob Smith", 1);
+    Client secondClient = new Client("Bob Smith", 1);
+    assertTrue(firstClient.equals(secondClient));
+  }
 
-    @Test
-    public void save_assignsIdToObject() {
-      Client myClient = new Client("Bob Smith", 1);
-      myClient.save();
-      Client savedClient = Client.all().get(0);
-      assertEquals(myClient.getId(), savedClient.getId());
-    }
+  @Test
+  public void save_assignsIdToObject() {
+    Client myClient = new Client("Bob Smith", 1);
+    myClient.save();
+    Client savedClient = Client.all().get(0);
+    assertEquals(myClient.getId(), savedClient.getId());
+  }
 
-    @Test
-    public void find_findsClientInDatabase_true() {
-      Client myClient = new Client("Bob Smith", 1);
-      myClient.save();
-      Client savedClient = Client.find(myClient.getId());
-      assertTrue(myClient.equals(savedClient));
-    }
+  @Test
+  public void find_findsClientInDatabase_true() {
+    Client myClient = new Client("Bob Smith", 1);
+    myClient.save();
+    Client savedClient = Client.find(myClient.getId());
+    assertTrue(myClient.equals(savedClient));
+  }
 
-    @Test
-    public void save_savesStylistIdIntoDB_true() {
-      Stylist myStylist = new Stylist("Paul Mitchel");
-      myStylist.save();
-      Client myClient = new Client("Bob Smith", myStylist.getId());
-      myClient.save();
-      Client savedClient = Client.find(myClient.getId());
-      assertEquals(savedClient.getStylistId(), myStylist.getId());
-    }
+  @Test
+  public void save_savesStylistIdIntoDB_true() {
+    Stylist myStylist = new Stylist("Paul Mitchel");
+    myStylist.save();
+    Client myClient = new Client("Bob Smith", myStylist.getId());
+    myClient.save();
+    Client savedClient = Client.find(myClient.getId());
+    assertEquals(savedClient.getStylistId(), myStylist.getId());
+  }
   @Test
   public void find_findStylistInDatabase_true() {
     Stylist myStylist = new Stylist("Paul Mitchel");

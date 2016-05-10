@@ -1,4 +1,4 @@
-# ToDoListDataBase
+# Fake Hair Salon CMS
 practice in java
 
 ## Name
@@ -10,7 +10,9 @@ practice in java, gradle, velocity, and sparkJava
 * _Clone this repository_
 * _Install the [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java SRE](http://www.java.com/en/)._
 * _[Install gradle](http://codetutr.com/2013/03/23/how-to-install-gradle/)_
-
+* _Run postgres and psql in console_
+* _Type in console: CREATE DATABASE hair_salon;_
+* _With in HairSalon dir type: psql hair_salon < hair_salon.sql_
 * _Navigate back to the directory where this repository has been cloned and run gradle:_
 ```
 $ gradle run
