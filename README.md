@@ -1,7 +1,7 @@
 # Fake Hair Salon CMS
 practice in java
 
-## Name
+## Student Project
 
 practice in java, gradle, velocity, and sparkJava
 
