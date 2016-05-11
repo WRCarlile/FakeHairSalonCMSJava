@@ -1,11 +1,11 @@
-<h1>$client.getName()</h1>
+<h1 class="long-shadow">$client.getName()</h1>
 
 <p>Edit client:</p>
 
 <form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
   <label for="name">Name</label>
   <input id="name" name="name" type="text">
-  <button type="submit" class="btn btn-info" id="update-client">Update Client</button>
+  <button type="submit" class="btn btn-info" id="update-client">Update Name</button>
 </form>
 
 <form action="/stylists/$client.getStylistId()/clients/$client.getId()/delete" method="post">
