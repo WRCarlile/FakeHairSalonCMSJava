@@ -13,7 +13,8 @@ practice in java, gradle, velocity, and sparkJava
 * _Run postgres and psql in console_
 * _Type in console: CREATE DATABASE hair_salon;_
 * _With in HairSalon dir type: psql hair_salon < hair_salon.sql_
-* _Navigate back to the directory where this repository has been cloned and run gradle:_
+* _Navigate back to the directory where this repository has been cloned and type: psql hair_salon < hair_salon.sql_
+* _Now run gradle:_
 ```
 $ gradle run
 ```
@@ -34,6 +35,8 @@ _To contact, leave a comment on Github._
 * _FluentLenium_
 * _Gradle_
 * _Spark_
+* _Postgres_
+* _psql_
 
 ### License
 
